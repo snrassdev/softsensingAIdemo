@@ -14,6 +14,7 @@ from sklearn.preprocessing import StandardScaler
 from dash.exceptions import PreventUpdate
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], suppress_callback_exceptions=True)
+server = app.server
 app.title = "Blusense Soft Sensing AI"
 
 app.layout = html.Div([
