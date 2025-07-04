@@ -4,5 +4,6 @@ pandas
 numpy
 plotly
 openpyxl
-tensorflow
+tensorflow 2.16
 scikit-learn
+Python 3.11.3
