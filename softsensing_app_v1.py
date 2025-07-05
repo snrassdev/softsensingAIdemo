@@ -10,8 +10,10 @@ import numpy as np
 import plotly.graph_objects as go
 import plotly.subplots as sp
 import tensorflow as tf
+import os
 from sklearn.preprocessing import StandardScaler
 from dash.exceptions import PreventUpdate
+
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], suppress_callback_exceptions=True)
 server = app.server
@@ -298,5 +300,8 @@ def generate_download_link(data_json):
     encoded = base64.b64encode(out_buffer.getvalue()).decode()
     return "data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64," + encoded
 
+
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 8050))
+    app.run(host="0.0.0.0", port=port, debug=False)
